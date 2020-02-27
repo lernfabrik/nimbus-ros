@@ -19,14 +19,14 @@ find_package(catkin REQUIRED COMPONENTS
 find_package(Boost REQUIRED COMPONENTS system)
 
 catkin_package(
-  INCLUDE_DIRS include
+#  INCLUDE_DIRS include
   LIBRARIES nimbus_driver
   CATKIN_DEPENDS geometry_msgs pcl_ros roscpp rospy sensor_msgs tf2
 #  DEPENDS system_lib
 )
 
 include_directories(
- include
+# include
   ${catkin_INCLUDE_DIRS}
   ${PCL_INCLUDE_DIRS}
 )
@@ -35,5 +35,3 @@ include_directories(
 #############################################################################
 ###################### !Executable!##########################################
 #############################################################################
-add_executable(nimbus_io_node src/nimbus_io.cpp)
-target_link_libraries(nimbus_io_node ${catkin_LIBRARIES} ${PCL_INCLUDE_DIRS})
